@@ -1,0 +1,19 @@
+{
+  "name": "neoteva.fr",
+  "version": "1.0.0",
+  "description": "neoteva website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neoteva-team/neoteva.fr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neoteva-team/neoteva.fr/issues"
+  },
+  "homepage": "https://github.com/neoteva-team/neoteva.fr#readme"
+}
