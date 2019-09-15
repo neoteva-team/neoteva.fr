@@ -21,6 +21,7 @@ export default class MyApp extends App {
       <React.Fragment>
         <Head>
           <title>neoteva</title>
+          <meta name="description" content="Une réponse à vos besoins de gouvernance d'entreprise et d'assistance à maîtrise d'ouvrage"></meta>
         </Head>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
