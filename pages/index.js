@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -16,12 +16,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import mySvg from './logoAnimation.svg';
+const sizeOf = require('image-size');
+//console.log(sizeOf('logoAnimation'));
 
 import Head from 'next/head'
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = (orientation) => { return(
+  makeStyles(theme => ({
   root: {
     display: 'flex',
   },
@@ -51,13 +55,58 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-}));
+  img: {
+    orientation
+  }
+})));}
+
+function getWindowDimensions() {
+  let width=0;
+  let height=0;
+  if (typeof window !== 'undefined') {
+    width = window.innerWidth;
+    height= window.innerHeight;
+  }
+  else {
+  }
+  return {
+    width,
+    height
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
 
 function Index(props) {
   const { container } = props;
-  const classes = useStyles();
-  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+//  useEffect(()=> {
+    const { height, width } = useWindowDimensions();
+    let orientation = { width: '100%'};
+    
+    console.log(height,width, mySvg);
+
+//  });
+const classes = useStyles(orientation);
+const theme = useTheme();
+
+console.log(classes.img);
+
 
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
@@ -138,6 +187,7 @@ function Index(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
+        <img style={{width: '100%'}} src={mySvg} alt="neoteva launch animation"></img>
         <div className={classes.toolbar} />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

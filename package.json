@@ -25,7 +25,9 @@
     "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
     "clsx": "latest",
+    "image-size": "^0.7.5",
     "next": "latest",
+    "next-images": "^1.2.0",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest"
