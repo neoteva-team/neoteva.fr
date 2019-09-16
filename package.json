@@ -30,7 +30,8 @@
     "next-images": "^1.2.0",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-svg": "^10.0.20"
   },
   "devDependencies": {}
 }

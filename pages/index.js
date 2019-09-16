@@ -17,8 +17,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import mySvg from './logoAnimationWhiteBg.svg';
-const sizeOf = require('image-size');
+//const sizeOf = require('image-size');
 //console.log(sizeOf('logoAnimation'));
+import ReactSVG from 'react-svg';
 
 import Head from 'next/head'
 
@@ -126,7 +127,7 @@ console.log(classes.img);
       </List>
       <Divider />
       <List>
-        {['LinkedIn'].map((text, index) => (
+        {['LinkedIn', 'Facebook', 'Instagram'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
@@ -187,8 +188,10 @@ console.log(classes.img);
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <img style={{width: '100%'}} src={mySvg} alt="neoteva launch animation"></img>
+        <ReactSVG src={mySvg}></ReactSVG>
+
         <div className={classes.toolbar} />
+
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
