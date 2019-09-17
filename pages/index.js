@@ -21,6 +21,8 @@ import mySvg from './neotevaTeaserAnimation.svg';
 //console.log(sizeOf('logoAnimation'));
 import ReactSVG from 'react-svg';
 import Document, { Head, Main, NextScript } from 'next/document';
+import NextLink from 'next/link';
+
 console.log('svg', {mySvg})
 
 const drawerWidth = 240;
@@ -30,6 +32,8 @@ const useStyles =
   makeStyles(theme => ({
   root: {
     display: 'flex',
+//    flexDirection: 'row'
+//    flexWrap: 'wrap'
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
@@ -61,7 +65,13 @@ const useStyles =
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    textAlign: 'center'
+    textAlign: 'center',
+
+  },
+  footer: {    
+    padding: theme.spacing(3),
+    textAlign: 'center',
+
   }
 }));
 
@@ -199,10 +209,9 @@ function Index(props) {
           </Drawer>
         </Hidden>
       </nav>
+      <div>
       <main className={classes.content}>
-
         <div className={classes.toolbar} />
-
         <ReactSVG style={{width: '100%'}} src={mySvg}
         beforeInjection={svg => {
           ratio < 1 ? svg.setAttribute('style', 'width: 100%') : svg.setAttribute('style', 'height:' + (height-headerHeight) +'px')
@@ -235,8 +244,10 @@ function Index(props) {
           nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
-        <p>{width}:{height}:{ratio}</p>
       </main>
+
+      <footer className={classes.footer}>Copyright 2019 - <NextLink href='https://www.linkedin.com/company/neoteva/'><a>neoteva</a></NextLink> - Created by <NextLink href='https://www.linkedin.com/in/lorendeaux/'><a>Olivier Lorendeaux</a></NextLink></footer>
+      </div>
     </div>
   
 
