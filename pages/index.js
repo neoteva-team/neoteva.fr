@@ -16,7 +16,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import mySvg from './logoAnimationWhiteBg.svg';
+import mySvg from './neotevaTeaserAnimation.svg';
 //const sizeOf = require('image-size');
 //console.log(sizeOf('logoAnimation'));
 import ReactSVG from 'react-svg';
@@ -24,8 +24,9 @@ import Document, { Head, Main, NextScript } from 'next/document';
 console.log('svg', {mySvg})
 
 const drawerWidth = 240;
+const headerHeight = 64;
 
-const useStyles = (orientation) => { return(
+const useStyles =
   makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -55,11 +56,9 @@ const useStyles = (orientation) => { return(
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-  },
-  img: {
-    orientation
+    textAlign: 'center'
   }
-})));}
+}));
 
 function getWindowDimensions() {
   let width=0;
@@ -94,19 +93,22 @@ function useWindowDimensions() {
 }
 
 function Index(props) {
+  let orientation = { width: '100%'};
+
   const { container } = props;
+  const classes = useStyles();
+  const theme = useTheme();
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 //  useEffect(()=> {
     const { height, width } = useWindowDimensions();
-    let orientation = { width: '100%'};
+    const ratio = ((width-drawerWidth)/(height-headerHeight));
     
     console.log(height,width, mySvg);
 
 //  });
-const classes = useStyles(orientation);
-const theme = useTheme();
 
-console.log(classes.img);
+//console.log(classes.img);
 
 
   function handleDrawerToggle() {
@@ -118,7 +120,7 @@ console.log(classes.img);
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['Notre offre', 'Qui sommes nous ?', 'Contact'].map((text, index) => (
+        {['Notre offre', 'Qui sommes nous ?', 'Contact', 'Draft'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
@@ -137,7 +139,7 @@ console.log(classes.img);
     </div>
   );
 
-  return (<div>
+  return (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -154,9 +156,9 @@ console.log(classes.img);
           <Typography variant="h6" noWrap>
             neoteva
           </Typography>
-          <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
+          {/* <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
 <script type="IN/FollowCompany" data-id="25757045" data-counter="bottom"></script>
-
+ */}
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
@@ -191,9 +193,17 @@ console.log(classes.img);
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <ReactSVG src={mySvg}></ReactSVG>
 
         <div className={classes.toolbar} />
+
+        <ReactSVG style={{width: '100%'}} src={mySvg}
+        beforeInjection={svg => {
+          ratio < 1 ? svg.setAttribute('style', 'width: 100%') : svg.setAttribute('style', 'height:' + (height-headerHeight) +'px')
+          // Height is 190 here to account for `stroke-width: 5`.
+          //svg.querySelector('rect').setAttribute('style', 'height: 190px');
+        }}
+        ></ReactSVG>
+
 
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -218,9 +228,10 @@ console.log(classes.img);
           nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
+        <p>{width}:{height}:{ratio}</p>
       </main>
     </div>
-    </div>
+  
 
   );
 }
