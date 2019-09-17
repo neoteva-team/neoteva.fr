@@ -53,6 +53,11 @@ const useStyles =
   drawerPaper: {
     width: drawerWidth,
   },
+  linkedIn: {
+    marginLeft: "auto",
+    marginRight: -12
+
+  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -156,9 +161,11 @@ function Index(props) {
           <Typography variant="h6" noWrap>
             neoteva
           </Typography>
-          {/* <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
+          <div className={classes.linkedIn}> 
+          <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
 <script type="IN/FollowCompany" data-id="25757045" data-counter="bottom"></script>
- */}
+
+          </div>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
