@@ -20,8 +20,7 @@ import mySvg from './logoAnimationWhiteBg.svg';
 //const sizeOf = require('image-size');
 //console.log(sizeOf('logoAnimation'));
 import ReactSVG from 'react-svg';
-
-import Head from 'next/head';
+import Document, { Head, Main, NextScript } from 'next/document';
 console.log('svg', {mySvg})
 
 const drawerWidth = 240;
