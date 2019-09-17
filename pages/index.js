@@ -21,7 +21,8 @@ import mySvg from './logoAnimationWhiteBg.svg';
 //console.log(sizeOf('logoAnimation'));
 import ReactSVG from 'react-svg';
 
-import Head from 'next/head'
+import Head from 'next/head';
+console.log('svg', {mySvg})
 
 const drawerWidth = 240;
 
@@ -154,6 +155,9 @@ console.log(classes.img);
           <Typography variant="h6" noWrap>
             neoteva
           </Typography>
+          <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
+<script type="IN/FollowCompany" data-id="25757045" data-counter="bottom"></script>
+
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
