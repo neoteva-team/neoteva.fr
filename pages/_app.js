@@ -20,7 +20,7 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-    <link rel="canonical" href="http://www.neoteva.fr/" />
+    <link rel="canonical" href="https://www.neoteva.fr/" />
 
 
           <title>neoteva, direction générale de transition</title>
