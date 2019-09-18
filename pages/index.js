@@ -1,6 +1,6 @@
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 // const sizeOf = require('image-size');
 // console.log(sizeOf('logoAnimation'));
 import ReactSVG from 'react-svg';

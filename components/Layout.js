@@ -1,5 +1,5 @@
-import { makeStyles } from '@material-ui/core';
-import React from 'react';
+import { CssBaseline, makeStyles } from '@material-ui/core';
+// import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import SideBar from './SideBar';
@@ -26,6 +26,7 @@ const Layout = props => {
 
   return (
     <div className={classes.root}>
+      <CssBaseline />
       <Header />
       <SideBar />
       <div className={classes.contentWrapper}>

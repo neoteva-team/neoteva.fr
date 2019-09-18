@@ -2,7 +2,8 @@
 
 import { makeStyles } from '@material-ui/core';
 import NextLink from 'next/link';
-import React from 'react';
+
+// import React from 'react';
 
 const useStyles = makeStyles(theme => ({
   footer: {

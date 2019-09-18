@@ -8,7 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import React from 'react';
+import { useState } from 'react';
 
 const drawerWidth = 240;
 
@@ -31,7 +31,7 @@ const SideBar = props => {
   const classes = useStyles();
   const theme = useTheme();
 
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
