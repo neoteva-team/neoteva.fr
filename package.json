@@ -28,7 +28,7 @@
     "image-size": "^0.7.5",
     "next": "^9.0.6",
     "next-images": "^1.2.0",
-    "prop-types": "latest",
+    "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
     "react-svg": "^10.0.20"

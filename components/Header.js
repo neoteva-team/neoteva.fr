@@ -1,14 +1,13 @@
 // implements Layout header
 
-import {
-  AppBar,
-  IconButton,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const drawerWidth = 240;
 
@@ -31,9 +30,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Header = () => {
+const Header = props => {
   const classes = useStyles();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const { mobileOpen, setMobileOpen } = props;
+
+  //  const [mobileOpen, setMobileOpen] = useState(false);
 
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
@@ -71,6 +72,11 @@ const Header = () => {
       </Toolbar>
     </AppBar>
   );
+};
+
+Header.propTypes = {
+  mobileOpen: PropTypes.bool.isRequired,
+  setMobileOpen: PropTypes.func.isRequired,
 };
 
 export default Header;

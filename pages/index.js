@@ -1,12 +1,11 @@
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+/* eslint-disable no-unused-expressions */
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // const sizeOf = require('image-size');
 // console.log(sizeOf('logoAnimation'));
 import ReactSVG from 'react-svg';
 import mySvg from './neotevaTeaserAnimation.svg';
-
-console.log('svg', { mySvg });
 
 const drawerWidth = 240;
 const headerHeight = 64;
@@ -57,16 +56,11 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-function Index(props) {
-  const { container } = props;
-
+function Index() {
   const classes = useStyles();
-  const theme = useTheme();
 
   const { height, width } = useWindowDimensions();
   const ratio = (width - drawerWidth) / (height - headerHeight);
-
-  console.log(container, height, width, mySvg);
 
   return (
     <main className={classes.content}>
@@ -74,9 +68,11 @@ function Index(props) {
       <ReactSVG
         src={mySvg}
         beforeInjection={svg => {
-          ratio < 1
-            ? svg.setAttribute('style', 'width: 100%')
-            : svg.setAttribute('style', `height:${height - headerHeight}px`);
+          if (ratio < 1) {
+            svg.setAttribute('style', 'width: 100%');
+          } else {
+            svg.setAttribute('style', `height:${height - headerHeight}px`);
+          }
           // Height is 190 here to account for `stroke-width: 5`.
           // svg.querySelector('rect').setAttribute('style', 'height: 190px');
         }}
@@ -136,10 +132,11 @@ function Index(props) {
         missions, et s’intègrent au personnel de l’entreprise, contrairement au
         consultant qui reste un acteur externe. « Ils relèvent leurs manches et
         se mettent au travail »
-        <Typography paragraph align="left" variant="h6">
-          Compétences professionnelles
-        </Typography>
       </Typography>
+      <Typography paragraph align="left" variant="h6">
+        Compétences professionnelles
+      </Typography>
+
       <Typography paragraph align="left">
         Plusieurs compétences clés sont requises pour un manager de transition :
         Expérience solide: Les expériences professionnelles sont un facteur clé

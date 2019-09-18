@@ -8,7 +8,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const drawerWidth = 240;
 
@@ -26,12 +27,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SideBar = props => {
-  const { container } = props;
-
+  const { mobileOpen, setMobileOpen } = props;
   const classes = useStyles();
   const theme = useTheme();
-
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
@@ -73,7 +71,6 @@ const SideBar = props => {
       of links. */}
       <Hidden smUp implementation="css">
         <Drawer
-          container={container}
           variant="temporary"
           anchor={theme.direction === 'rtl' ? 'right' : 'left'}
           open={mobileOpen}
@@ -101,6 +98,11 @@ const SideBar = props => {
       </Hidden>
     </nav>
   );
+};
+
+SideBar.propTypes = {
+  setMobileOpen: PropTypes.func.isRequired,
+  mobileOpen: PropTypes.bool.isRequired,
 };
 
 export default SideBar;

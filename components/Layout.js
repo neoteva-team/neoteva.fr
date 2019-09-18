@@ -1,5 +1,6 @@
 import { CssBaseline, makeStyles } from '@material-ui/core';
-// import React from 'react';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import SideBar from './SideBar';
@@ -14,21 +15,15 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Layout = props => {
-  //    const { container } = props;
   const { children } = props;
-
+  const [mobileOpen, setMobileOpen] = useState(false);
   const classes = useStyles();
-  //  const { Component } = props.props;
-  //  const { pageProps } = props.props;
-  //  const { Component, pageProps } = props;
-
-  console.log('LAYOUT', props);
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Header />
-      <SideBar />
+      <Header mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      <SideBar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
       <div className={classes.contentWrapper}>
         {children}
         <Footer />
@@ -37,4 +32,7 @@ const Layout = props => {
   );
 };
 
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 export default Layout;

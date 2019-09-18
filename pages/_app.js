@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
 import App from 'next/app';
@@ -17,11 +18,9 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    console.log('APPP', this.props);
-    //    const props = this.props;
 
     return (
-      <>
+      <div>
         <Head>
           <link rel="canonical" href="https://www.neoteva.fr/" />
 
@@ -36,13 +35,14 @@ export default class MyApp extends App {
           />
         </Head>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          {/* CssBaseline kickstart an elegant, consistent, and 
+          simple baseline to build upon. */}
           <CssBaseline />
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </ThemeProvider>
-      </>
+      </div>
     );
   }
 }
