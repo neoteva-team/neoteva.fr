@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   contentWrapper: {
+    overflow: 'auto',
     width: '100%',
   },
   content: {

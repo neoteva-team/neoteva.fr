@@ -110,11 +110,11 @@ class DemoCoverflow extends React.Component {
           return (
             <Animated.div
               key={String(currentIndex)}
-              style={({
+              style={{
                 opacity,
-                  transform: [{ scale }, { translateX }],
+                transform: [{ scale }, { translateX }],
                 ...styles.slide,
-              })}
+              }}
             >
               <img style={styles.img} src={album.src} alt="cover" />
               {album.name}
