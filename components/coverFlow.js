@@ -75,6 +75,7 @@ const albums = [
 
 class DemoCoverflow extends React.Component {
   // classes = useStyles();
+  // test
 
   state = {
     index: 0,
