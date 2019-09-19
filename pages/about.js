@@ -13,7 +13,7 @@ const About = () => {
           content="Parcours, expériences et compétences d'un chef et dirigeant d'entreprise : Olivier Lorendeaux "
         />
       </Head>
-      <DemoCoverflow />
+      <DemoCoverflow style={{ width: 'auto' }} />
     </div>
   );
 };

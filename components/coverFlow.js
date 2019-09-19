@@ -4,8 +4,15 @@ import SwipeableViews from 'react-swipeable-views';
 
 const styles = {
   root: {
-    background: '#000',
-    padding: '0 50px',
+    background: '#fff',
+    padding: '0 100px',
+    //    position: 'flex',
+    //    flexDirection: 'column',
+    //    flexWrap: 'wrap',
+    //        alignContent: 'space-between',
+    margin: 'auto',
+
+    maxWidth: '400px',
   },
   slide: {
     padding: '24px 16px',
@@ -14,10 +21,11 @@ const styles = {
     justifyContent: 'center',
     flexDirection: 'column',
     display: 'flex',
+    maxWidth: '200px',
   },
   img: {
-    width: 180,
-    height: 180,
+    width: 80,
+    height: 80,
     display: 'block',
     marginBottom: 16,
   },
@@ -85,6 +93,7 @@ class DemoCoverflow extends React.Component {
         style={styles.root}
         onChangeIndex={this.handleChangeIndex}
         onSwitching={this.handleSwitch}
+        enableMouseEvents
       >
         {albums.map((album, currentIndex) => {
           const inputRange = albums.map((_, i) => i);
