@@ -25,6 +25,7 @@ export default class MyApp extends App {
           <link rel="canonical" href="https://www.neoteva.fr/" />
 
           <title>neoteva, direction générale de transition</title>
+
           <meta
             name="description"
             content="Une réponse à vos besoins de gouvernance d'entreprise et d'assistance à maîtrise d'ouvrage"

@@ -32,6 +32,7 @@
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-ga": "^2.6.0",
     "react-svg": "^10.0.20",
     "react-swipeable-views": "^0.13.3"
   },
