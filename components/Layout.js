@@ -5,13 +5,19 @@ import Footer from './Footer';
 import Header from './Header';
 import SideBar from './SideBar';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    //    flexDirection: 'row'
-    //    flexWrap: 'wrap'
   },
-  contentWrapper: {},
+  contentWrapper: {
+    width: '100%',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    textAlign: 'center',
+  },
+  toolbar: theme.mixins.toolbar,
 }));
 
 const Layout = props => {
@@ -31,7 +37,11 @@ const Layout = props => {
         mobileOpen={mobileOpen}
       />
       <div className={classes.contentWrapper}>
-        {children}
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          {children}
+        </main>
+
         <Footer />
       </div>
     </div>

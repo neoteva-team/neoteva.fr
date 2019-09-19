@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-expressions */
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React, { useEffect, useState } from 'react';
 // const sizeOf = require('image-size');
@@ -9,21 +8,6 @@ import mySvg from './neotevaTeaserAnimation.svg';
 
 const drawerWidth = 240;
 const headerHeight = 64;
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    //    flexDirection: 'row'
-    //    flexWrap: 'wrap'
-  },
-  contentWrapper: {},
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    textAlign: 'center',
-  },
-  toolbar: theme.mixins.toolbar,
-}));
 
 function getWindowDimensions() {
   let width = 0;
@@ -57,14 +41,13 @@ function useWindowDimensions() {
 }
 
 function Index() {
-  const classes = useStyles();
+  //  const classes = useStyles();
 
   const { height, width } = useWindowDimensions();
   const ratio = (width - drawerWidth) / (height - headerHeight);
 
   return (
-    <main className={classes.content}>
-      <div className={classes.toolbar} />
+    <div>
       <ReactSVG
         src={mySvg}
         beforeInjection={svg => {
@@ -156,7 +139,7 @@ function Index() {
         plus de résultats. Il s’oriente clairement dans une logique de
         contribution et non plus une logique de pouvoir.
       </Typography>
-    </main>
+    </div>
   );
 }
 

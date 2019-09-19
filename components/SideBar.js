@@ -40,14 +40,15 @@ const SideBar = props => {
         {['Notre offre', 'Qui sommes nous ?', 'Contact', 'Draft'].map(
           (text, index) => (
             <NextLink href="about" key={text}>
-              <ListItem button key={text}>
+              <ListItem
+                button
+                key={text}
+                onClick={mobileOpen ? handleDrawerToggle : undefined}
+              >
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText
-                  primary={text}
-                  onClick={mobileOpen ? handleDrawerToggle : undefined}
-                />
+                <ListItemText primary={text} />
               </ListItem>
             </NextLink>
           ),

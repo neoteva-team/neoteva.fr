@@ -1,6 +1,7 @@
 // implements about page
 import Head from 'next/head';
 import React from 'react';
+import DemoCoverflow from '../components/coverFlow';
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
         />
       </Head>
       <p>About</p>
+      <DemoCoverflow />
     </div>
   );
 };
