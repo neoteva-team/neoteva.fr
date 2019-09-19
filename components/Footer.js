@@ -7,6 +7,7 @@ const useStyles = makeStyles(theme => ({
   footer: {
     padding: theme.spacing(3),
     textAlign: 'center',
+    flexShrink: 0,
   },
 }));
 

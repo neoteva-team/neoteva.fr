@@ -24,6 +24,15 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <style global jsx>{`
+            html,
+            body,
+            body > div:first-child,
+            div#__next,
+            div#__next > div {
+              height: 100%;
+            }
+          `}</style>
         </Head>
         <body>
           <Main />

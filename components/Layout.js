@@ -8,17 +8,27 @@ import SideBar from './SideBar';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    height: '100%',
   },
   contentWrapper: {
-    overflow: 'auto',
+    //    overflow: 'auto',
     width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
     textAlign: 'center',
+    overflow: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
   },
   toolbar: theme.mixins.toolbar,
+  footer: {
+    flexShrink: 0,
+    overflowY: 'auto',
+  },
 }));
 
 const Layout = props => {
@@ -43,7 +53,7 @@ const Layout = props => {
           {children}
         </main>
 
-        <Footer />
+        <Footer className={classes.footer} />
       </div>
     </div>
   );

@@ -2,34 +2,41 @@ import Animated from 'animated/lib/targets/react-dom';
 import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
+// const useStyles = makeStyles(theme => ({
 const styles = {
   root: {
     background: '#fff',
     padding: '0 100px',
-    //    position: 'flex',
-    //    flexDirection: 'column',
-    //    flexWrap: 'wrap',
-    //        alignContent: 'space-between',
+    position: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    alignContent: 'space-between',
     margin: 'auto',
+    minHeight: '200px',
+    flexShrink: 0,
 
-    maxWidth: '400px',
+    minWidth: '300px',
+    maxWidth: '350px',
   },
   slide: {
     padding: '24px 16px',
+    background: '#fff',
     color: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
     display: 'flex',
-    maxWidth: '200px',
+    //    minWidth: '250px',
+    margin: 'auto',
   },
   img: {
-    width: 80,
-    height: 80,
+    width: 120,
+    height: 120,
     display: 'block',
     marginBottom: 16,
   },
 };
+// ));
 
 const albums = [
   {
@@ -67,6 +74,8 @@ const albums = [
 ];
 
 class DemoCoverflow extends React.Component {
+  // classes = useStyles();
+
   state = {
     index: 0,
     position: new Animated.Value(0),
