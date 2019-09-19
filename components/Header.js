@@ -32,13 +32,7 @@ const useStyles = makeStyles(theme => ({
 
 const Header = props => {
   const classes = useStyles();
-  const { mobileOpen, setMobileOpen } = props;
-
-  //  const [mobileOpen, setMobileOpen] = useState(false);
-
-  function handleDrawerToggle() {
-    setMobileOpen(!mobileOpen);
-  }
+  const { handleDrawerToggle } = props;
 
   return (
     <AppBar position="fixed" className={classes.appBar}>
@@ -75,8 +69,7 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  mobileOpen: PropTypes.bool.isRequired,
-  setMobileOpen: PropTypes.func.isRequired,
+  handleDrawerToggle: PropTypes.func.isRequired,
 };
 
 export default Header;

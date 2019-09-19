@@ -1,6 +1,7 @@
-import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+/* eslint-disable react/jsx-props-no-spreading */
 import { ServerStyleSheets } from '@material-ui/styles';
+import Document, { Head, Main, NextScript } from 'next/document';
+import React from 'react';
 import theme from '../src/theme';
 
 class MyDocument extends Document {
@@ -13,7 +14,10 @@ class MyDocument extends Document {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
-          <meta name="google-site-verification" content="_cWPeIkqOwKdH4aCXWiR0CKdrkeu-VCNQEKSZGGa7yc"></meta>
+          <meta
+            name="google-site-verification"
+            content="_cWPeIkqOwKdH4aCXWiR0CKdrkeu-VCNQEKSZGGa7yc"
+          />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
@@ -53,7 +57,8 @@ MyDocument.getInitialProps = async ctx => {
   // 3. app.render
   // 4. page.render
 
-  // Render app and page and get the context of the page with collected side effects.
+  // Render app and page and get the context of the page
+  // with collected side effects.
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
 

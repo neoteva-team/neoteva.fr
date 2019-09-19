@@ -8,7 +8,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import PropTypes from 'prop-types';
+import NextLink from 'next/link';
+import { PropTypes } from 'prop-types';
 import React from 'react';
 
 const drawerWidth = 240;
@@ -27,13 +28,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SideBar = props => {
-  const { mobileOpen, setMobileOpen } = props;
+  const { handleDrawerToggle, mobileOpen } = props;
   const classes = useStyles();
   const theme = useTheme();
-
-  function handleDrawerToggle() {
-    setMobileOpen(!mobileOpen);
-  }
 
   const drawer = (
     <div>
@@ -42,12 +39,17 @@ const SideBar = props => {
       <List>
         {['Notre offre', 'Qui sommes nous ?', 'Contact', 'Draft'].map(
           (text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+            <NextLink href="about" key={text}>
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText
+                  primary={text}
+                  onClick={mobileOpen ? handleDrawerToggle : undefined}
+                />
+              </ListItem>
+            </NextLink>
           ),
         )}
       </List>
@@ -101,7 +103,7 @@ const SideBar = props => {
 };
 
 SideBar.propTypes = {
-  setMobileOpen: PropTypes.func.isRequired,
+  handleDrawerToggle: PropTypes.func.isRequired,
   mobileOpen: PropTypes.bool.isRequired,
 };
 

@@ -18,12 +18,18 @@ const Layout = props => {
   const { children } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const classes = useStyles();
+  function handleDrawerToggle() {
+    setMobileOpen(!mobileOpen);
+  }
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Header mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
-      <SideBar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      <Header handleDrawerToggle={handleDrawerToggle} />
+      <SideBar
+        handleDrawerToggle={handleDrawerToggle}
+        mobileOpen={mobileOpen}
+      />
       <div className={classes.contentWrapper}>
         {children}
         <Footer />
