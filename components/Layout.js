@@ -1,4 +1,4 @@
-import { CssBaseline, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import Footer from './Footer';
@@ -41,7 +41,6 @@ const Layout = props => {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <Header handleDrawerToggle={handleDrawerToggle} />
       <SideBar
         handleDrawerToggle={handleDrawerToggle}

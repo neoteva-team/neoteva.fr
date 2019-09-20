@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { ServerStyleSheets } from '@material-ui/styles';
 import Document, { Head, Main, NextScript } from 'next/document';
+// import { Head } from 'next/head';
 import React from 'react';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import theme from '../src/theme';
 
-const trackingId = 'UA-148332477-1'; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
-
+// const trackingId = 'UA-148332477-1'; // Replace with your Google Analytics tracking ID
+// ReactGA.initialize(trackingId);
 class MyDocument extends Document {
   render() {
     return (
@@ -28,15 +28,6 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <style global jsx>{`
-            html,
-            body,
-            body > div:first-child,
-            div#__next,
-            div#__next > div {
-              height: 100%;
-            }
-          `}</style>
         </Head>
         <body>
           <Main />
@@ -72,6 +63,7 @@ MyDocument.getInitialProps = async ctx => {
 
   // Render app and page and get the context of the page
   // with collected side effects.
+
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
 

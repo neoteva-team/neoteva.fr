@@ -1,11 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider, withStyles } from '@material-ui/styles';
 import App from 'next/app';
+// import { Head } from 'next/document';
 import Head from 'next/head';
 import React from 'react';
 import Layout from '../components/Layout';
 import theme from '../src/theme';
+
+const GlobalCss = withStyles({
+  '@global': {
+    'html, body ,body > div:first-child, div#__next, div#__next > div': {
+      height: '100%',
+    },
+  },
+})(() => null);
 
 export default class MyApp extends App {
   componentDidMount() {
@@ -38,7 +46,9 @@ export default class MyApp extends App {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and 
           simple baseline to build upon. */}
-          <CssBaseline />
+          {/* <CssBaseline /> */}
+          <GlobalCss />
+
           <Layout>
             <Component {...pageProps} />
           </Layout>
