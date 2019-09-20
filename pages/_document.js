@@ -8,6 +8,8 @@ import theme from '../src/theme';
 
 const trackingId = 'UA-148332477-1'; // Replace with your Google Analytics tracking ID
 ReactGA.initialize(trackingId);
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 class MyDocument extends Document {
   render() {
     return (
