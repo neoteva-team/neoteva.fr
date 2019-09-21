@@ -3,14 +3,7 @@ import { ServerStyleSheets } from '@material-ui/styles';
 import Document, { Head, Main, NextScript } from 'next/document';
 // import { Head } from 'next/head';
 import React from 'react';
-import ReactGA from 'react-ga';
 import theme from '../src/theme';
-
-const trackingId = 'UA-148332477-1'; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
-if (typeof window !== 'undefined') {
-  ReactGA.pageview(window.location.pathname + window.location.search);
-}
 
 class MyDocument extends Document {
   render() {
