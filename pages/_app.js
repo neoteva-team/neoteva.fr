@@ -5,8 +5,8 @@ import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import Layout from '../components/Layout';
+import { initGA } from '../src/helpers/googleAnalytics';
 import theme from '../src/theme';
-import { initGA, logPageView } from '../src/utils/googleAnalytics';
 
 const GlobalCss = withStyles({
   '@global': {
@@ -27,15 +27,7 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    if (typeof window !== 'undefined') {
-      if (!window.GA_INITIALIZED) {
-        initGA();
-        window.GA_INITIALIZED = true;
-        logPageView(this.props.router.pathname);
-      }
-    } else {
-      //      logPageView(this.props.router.pathname);
-    }
+    initGA(this.props.router.pathname);
 
     return (
       <div>

@@ -1,13 +1,9 @@
 import { makeStyles } from '@material-ui/core';
-import Router from 'next/router';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { logPageView } from '../src/utils/googleAnalytics';
 import Footer from './Footer';
 import Header from './Header';
 import SideBar from './SideBar';
-
-Router.events.on('routeChangeComplete', url => logPageView(url));
 
 const useStyles = makeStyles(theme => ({
   root: {

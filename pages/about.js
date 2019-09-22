@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react';
 import DemoCoverflow from '../components/CoverFlow';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
