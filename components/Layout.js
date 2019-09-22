@@ -9,9 +9,10 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     height: '100%',
+    flexDirection: 'row',
   },
   contentWrapper: {
-    //    overflow: 'auto',
+    overflow: 'auto',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -22,7 +23,8 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     overflow: 'auto',
     display: 'flex',
-    justifyContent: 'center',
+    //    justifyContent: 'center',
+    flexDirection: 'column',
   },
   toolbar: theme.mixins.toolbar,
   footer: {

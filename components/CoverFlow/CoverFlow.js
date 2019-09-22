@@ -11,17 +11,17 @@ import imgSpieBatignolles from './img/Spie_Batignolles_Logo.svg';
 const styles = {
   root: {
     background: '#fff',
-    padding: '0 100px',
+    //  padding: '0 100px',
     position: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap',
     alignContent: 'space-between',
     margin: 'auto',
-    minHeight: '200px',
+    //    minHeight: '200px',
     flexShrink: 0,
 
-    minWidth: '300px',
-    maxWidth: '350px',
+    //    minWidth: '300px',
+    //    maxWidth: '350px',
   },
   slide: {
     padding: '24px 16px',
@@ -33,6 +33,7 @@ const styles = {
     display: 'flex',
     //    minWidth: '250px',
     margin: 'auto',
+    maxWidth: 'fit-content',
   },
   img: {
     maxWidth: '120px',
@@ -42,7 +43,7 @@ const styles = {
     //    width: 120,
     //    height: 120,
     display: 'block',
-    marginBottom: 16,
+    //    marginBottom: 16,
   },
 };
 // ));

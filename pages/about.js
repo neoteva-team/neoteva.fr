@@ -3,12 +3,13 @@ import { makeStyles } from '@material-ui/styles';
 // import { Head } from 'next/document';
 import Head from 'next/head';
 import React from 'react';
-import DemoCoverflow from '../components/CoverFlow/CoverFlow';
+import ScrollableTabsButtonAuto from '../components/CoverFlow/CoverFlowTab';
 
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
+    flexGrow: 1,
     //    width: 'auto',
   },
   content: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
   },
   swipable: {
-    minHeight: '200px',
+    //    minHeight: '200px',
     flexShrink: 0,
   },
 }));
@@ -34,7 +35,7 @@ const About = () => {
       </Head>
       <div className={classes.content} />
       <div className={classes.swipable}>
-        <DemoCoverflow />
+        <ScrollableTabsButtonAuto />
       </div>
     </div>
   );
