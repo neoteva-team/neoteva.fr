@@ -3,7 +3,7 @@ import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import imgBouygues from './img/Bouygues_logo.svg';
 import imgGroupeEtchart from './img/groupe-etchart-logo-image-noir-600x300.jpg';
-import imgSchool from './img/Logo_CentraleSupélec.svg';
+import imgSchool from './img/Logo_CentraleSupelec.svg';
 import imgVinci from './img/Logo_Vinci.svg';
 import imgIdentity from './img/olo-gris.jpg';
 import imgSpieBatignolles from './img/Spie_Batignolles_Logo.svg';
