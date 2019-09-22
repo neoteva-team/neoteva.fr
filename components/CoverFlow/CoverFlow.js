@@ -1,7 +1,12 @@
 import Animated from 'animated/lib/targets/react-dom';
 import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
-
+import imgBouygues from './img/Bouygues_logo.svg';
+import imgGroupeEtchart from './img/groupe-etchart-logo-image-noir-600x300.jpg';
+import imgSchool from './img/Logo_CentraleSupélec.svg';
+import imgVinci from './img/Logo_Vinci.svg';
+import imgIdentity from './img/olo-gris.jpg';
+import imgSpieBatignolles from './img/Spie_Batignolles_Logo.svg';
 // const useStyles = makeStyles(theme => ({
 const styles = {
   root: {
@@ -30,8 +35,12 @@ const styles = {
     margin: 'auto',
   },
   img: {
-    width: 120,
-    height: 120,
+    maxWidth: '120px',
+    maxHeight: '120px',
+    width: 'auto',
+    height: 'auto',
+    //    width: 120,
+    //    height: 120,
     display: 'block',
     marginBottom: 16,
   },
@@ -40,36 +49,28 @@ const styles = {
 
 const albums = [
   {
-    name: 'Abbey Road',
-    src: '/static/album-art-1.jpg',
+    name: 'Identité',
+    src: imgIdentity,
   },
   {
-    name: 'Bat Out of Hell',
-    src: '/static/album-art-2.jpg',
+    name: 'Formation',
+    src: imgSchool,
   },
   {
-    name: 'Homogenic',
-    src: '/static/album-art-3.jpg',
+    name: 'Bouygues',
+    src: imgBouygues,
   },
   {
-    name: 'Number of the Beast',
-    src: '/static/album-art-4.jpg',
+    name: 'Vinci',
+    src: imgVinci,
   },
   {
-    name: "It's Blitz",
-    src: '/static/album-art-5.jpg',
+    name: 'Spie Batignolles',
+    src: imgSpieBatignolles,
   },
   {
-    name: 'The Man-Machine',
-    src: '/static/album-art-6.jpg',
-  },
-  {
-    name: 'The Score',
-    src: '/static/album-art-7.jpg',
-  },
-  {
-    name: 'Lost Horizons',
-    src: '/static/album-art-8.jpg',
+    name: 'Groupe Etchart',
+    src: imgGroupeEtchart,
   },
 ];
 

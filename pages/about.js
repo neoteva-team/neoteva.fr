@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 // import { Head } from 'next/document';
 import Head from 'next/head';
 import React from 'react';
-import DemoCoverflow from '../components/CoverFlow';
+import DemoCoverflow from '../components/CoverFlow/CoverFlow';
 
 const useStyles = makeStyles(() => ({
   root: {
