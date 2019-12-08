@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '100%',
     width: 'auto',
     height: 'auto',
-    position: 'absolute',
+    //    position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
