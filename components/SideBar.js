@@ -11,6 +11,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import NextLink from 'next/link';
 import { PropTypes } from 'prop-types';
 import React from 'react';
+import imgNeoteva from './neoteva.png';
 
 const drawerWidth = 240;
 
@@ -25,6 +26,23 @@ const useStyles = makeStyles(theme => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  imgToolbar: {
+    maxHeight: '100%',
+    maxWidth: '100%',
+    width: 'auto',
+    height: 'auto',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    margin: 'auto',
+  },
+  helper: {
+    display: 'inline-block',
+    height: '100%',
+    verticalAlign: 'middle',
+  },
 }));
 
 const SideBar = props => {
@@ -34,7 +52,11 @@ const SideBar = props => {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar}>
+        <span className={classes.helper}>
+          <img src={imgNeoteva} className={classes.imgToolbar} />
+        </span>
+      </div>
       <Divider />
       <List>
         {['Notre offre', 'Qui sommes nous ?', 'Contact', 'Draft'].map(

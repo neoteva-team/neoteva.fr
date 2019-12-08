@@ -55,7 +55,10 @@ const useStyles = makeStyles(theme => ({
   root: {
     // flexGrow: 1,
     // width: '100%',
+    maxWidth: '960px',
+    margin: 'auto',
     backgroundColor: theme.palette.background.paper,
+    //    '& .MuiTabs-flexContainer': { justifyContent: 'center' },
   },
   img: {
     maxWidth: '120px',
@@ -87,6 +90,8 @@ export default function ScrollableTabsButtonAuto() {
         variant="scrollable"
         scrollButtons="auto"
         aria-label="scrollable auto tabs example"
+
+        //        style={{ justifyContent: 'center' }}
       >
         <Tab
           label="Identité"
