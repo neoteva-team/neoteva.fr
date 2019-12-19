@@ -11,7 +11,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import NextLink from 'next/link';
 import { PropTypes } from 'prop-types';
 import React from 'react';
-import imgNeoteva from './neoteva.png';
+import imgNeoteva from './neoteva1800px.png';
 
 const drawerWidth = 240;
 
@@ -54,7 +54,7 @@ const SideBar = props => {
     <div>
       <div className={classes.toolbar}>
         <span className={classes.helper}>
-          <img src={imgNeoteva} className={classes.imgToolbar} />
+          <img src={imgNeoteva} className={classes.imgToolbar} alt="neoteva" />
         </span>
       </div>
       <Divider />
