@@ -58,7 +58,7 @@ const SideBar = props => {
         </span>
       </div>
       <Divider />
-      <List>
+      {/*       <List>
         {['Notre offre', 'Qui sommes nous ?', 'Contact', 'Draft'].map(
           (text, index) => (
             <NextLink href="about" key={text}>
@@ -87,6 +87,7 @@ const SideBar = props => {
           </ListItem>
         ))}
       </List>
+ */}{' '}
     </div>
   );
 

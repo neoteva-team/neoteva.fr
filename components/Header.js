@@ -49,7 +49,7 @@ const Header = props => {
         <Typography variant="h6" noWrap>
           neoteva
         </Typography>
-        <div className={classes.linkedIn}>
+        {/*         <div className={classes.linkedIn}>
           <script
             src="https://platform.linkedin.com/in.js"
             type="text/javascript"
@@ -63,6 +63,7 @@ const Header = props => {
             data-counter="bottom"
           />
         </div>
+ */}{' '}
       </Toolbar>
     </AppBar>
   );

@@ -16,9 +16,7 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      Copyright 2019 -{' '}
-      <a href="https://www.linkedin.com/company/neoteva/">neoteva</a> - Created
-      by{' '}
+      Copyright 2021 - Created by{' '}
       <a href="https://www.linkedin.com/in/lorendeaux/">Olivier Lorendeaux</a>
     </footer>
   );
